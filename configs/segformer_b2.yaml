@@ -1,0 +1,13 @@
+# configs/segformer_b2.yaml - Model C: SegFormer-B2 (transformer)
+model:
+  name: segformer_b2
+  type: segmentation
+  hf_model_id: nvidia/mit-b2
+  in_channels: 3
+  classes: 1
+  image_size: 512
+
+training:
+  batch_size: 8
+  lr: 6.0e-5
+  epochs: 60

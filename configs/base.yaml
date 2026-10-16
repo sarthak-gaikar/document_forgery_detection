@@ -1,0 +1,57 @@
+# configs/base.yaml - shared defaults (overridden per model)
+project:
+  name: tampered_text_detection
+  version: "1.0"
+  seed: 42
+  disclaimer: >
+    This tool is a forensic assistance aid only.
+    It must NOT be used as legal evidence or a definitive verdict.
+
+paths:
+  data_root: data/
+  doctamper_lmdb: data/DocTamper/lmdb/
+  doctamper_split: data/DocTamper/splits/
+  synthetic_root: data/synthetic/
+  realtext_cache: data/realtext_v2/
+  output_root: outputs/
+  checkpoint_dir: outputs/checkpoints/
+  log_dir: outputs/logs/
+  result_dir: outputs/results/
+  figure_dir: outputs/figures/
+
+data:
+  image_size: 512
+  tile_overlap: 64
+  num_workers: 4
+  pin_memory: true
+  augment: true
+  jpeg_q_min: 50
+  jpeg_q_max: 95
+
+training:
+  device: auto
+  batch_size: 16
+  epochs: 60
+  seed: 42
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  scheduler: cosine
+  warmup_epochs: 5
+  early_stopping_patience: 10
+  amp: true
+  grad_clip: 1.0
+  alpha_cls: 0.5
+
+loss:
+  seg_loss: bce_dice
+  focal_gamma: 2.0
+  dice_smooth: 1.0
+
+metrics:
+  primary: dice
+  threshold: 0.5
+
+logging:
+  tensorboard: true
+  csv: true
+  log_interval: 20

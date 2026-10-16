@@ -1,0 +1,51 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (large; store separately)
+data/
+outputs/checkpoints/
+outputs/logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets / API keys
+.env
+*.env.*
+
+# Model weights (commit configs only, not binary weights)
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.onnx
+
+# TensorBoard
+runs/
+
+# Coverage
+.coverage
+htmlcov/

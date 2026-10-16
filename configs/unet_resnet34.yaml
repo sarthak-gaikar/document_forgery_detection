@@ -1,0 +1,17 @@
+# configs/unet_resnet34.yaml - Model A: U-Net + ResNet34 (baseline)
+defaults:
+  - base
+
+model:
+  name: unet_resnet34
+  type: segmentation
+  arch: unet
+  encoder: resnet34
+  encoder_weights: imagenet
+  in_channels: 3
+  classes: 1
+
+training:
+  batch_size: 16
+  lr: 1.0e-4
+  epochs: 60

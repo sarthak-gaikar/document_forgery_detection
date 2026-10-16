@@ -1,0 +1,28 @@
+# configs/classifiers.yaml - Models E/F/G: image-level classifiers
+classifiers:
+  - name: custom_cnn
+    type: classification
+    arch: custom_cnn
+    in_channels: 3
+    num_classes: 1
+    lr: 1.0e-4
+    batch_size: 32
+
+  - name: resnet50
+    type: classification
+    arch: resnet50
+    encoder_weights: imagenet
+    num_classes: 1
+    lr: 5.0e-5
+    batch_size: 32
+
+  - name: efficientnet_b0
+    type: classification
+    arch: efficientnet_b0
+    encoder_weights: imagenet
+    num_classes: 1
+    lr: 5.0e-5
+    batch_size: 32
+
+training:
+  epochs: 40

@@ -1,0 +1,14 @@
+# configs/deeplabv3plus_efficientnet.yaml - Model B: DeepLabV3+ + EfficientNet-B3
+model:
+  name: deeplabv3plus_efficientnetb3
+  type: segmentation
+  arch: deeplabv3plus
+  encoder: efficientnet-b3
+  encoder_weights: imagenet
+  in_channels: 3
+  classes: 1
+
+training:
+  batch_size: 12
+  lr: 5.0e-5
+  epochs: 60
